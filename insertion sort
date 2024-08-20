@@ -1,0 +1,38 @@
+package insertionsort;
+
+import java.util.Arrays;
+
+public class InsertionSort {
+
+    
+    public static void main(String[] args) 
+    {
+        int arr[]={23,33,6,7,99,2,11,8,0,4};
+        insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
+        
+    }
+    // insertion sort method 
+    static void insertionSort(int arr[])
+    {
+        for(int i=0;i<arr.length-1;i++)
+        {
+            for(int j=i+1;j>0;j--)
+            {
+                if(arr[j]<arr[j-1])
+                {
+                    swap(arr,j,j-1);
+                }
+            }
+        }
+    }
+    // metod for swapping numbers
+    static void swap(int arr[],int first,int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+        
+    }
+    
+}
