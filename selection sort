@@ -1,0 +1,48 @@
+package selectionsort;
+
+import java.util.Arrays;
+
+public class SelectionSort {
+
+   
+    public static void main(String[] args)
+    {
+        int arr[]={4,3,7,9,11,27,0};
+        selectionSort(arr);
+        System.out.println(Arrays.toString(arr));
+        
+    }
+    
+    static void selectionSort(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            int start=0;
+            int last=arr.length-1;
+            int maxIndex=maxIndex(arr,start,last);
+            swap(arr,maxIndex,last);
+        }
+    }
+    static int maxIndex(int arr[],int start,int last)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            int max=start;
+            if(arr[i]<max)
+            {
+                max=arr[i];
+            }
+            return max;
+        }
+        return -1;
+    }
+    static void swap(int arr[],int first,int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+        
+    }
+    
+    
+}
